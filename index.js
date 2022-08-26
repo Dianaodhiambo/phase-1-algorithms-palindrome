@@ -1,6 +1,17 @@
 function isPalindrome(word) {
   // Write your algorithm here
+
+let first, last;
+for (let index = 0; index < (word.length/2); index++) {
+  first = word[index]; 
+  last = word[(word.length-1)-index];
+  if(first !== last){
+    return false;
+  }
 }
+return true;
+}
+
 
 /* 
   Add your pseudocode here
@@ -20,6 +31,7 @@ if (require.main === module) {
 
   console.log("Expecting: false");
   console.log("=>", isPalindrome("robot"));
+  console.log("=>", isPalindrome("ab"));
 }
 
 module.exports = isPalindrome;
